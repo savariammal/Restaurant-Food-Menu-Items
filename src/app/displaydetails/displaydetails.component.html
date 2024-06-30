@@ -1,0 +1,18 @@
+<h1>Details Component</h1>
+
+<div class="card">
+<div class="card-header"><h3>{{itemobj.itemname}}</h3></div>
+<div class="card-body">
+    <p>ID : {{itemobj.id}}</p>
+    <p>NAME :  {{itemobj.itemname}}</p>
+    <p>TYPE:  {{itemobj.itemtype}}</p>
+    <p>PRICE :  {{itemobj.itemprice}}</p>
+</div>
+<div class="card-footer">
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary" routerLink="/edit/{{itemobj.id}}">Edit</button>
+        <button type="button" class="btn btn-primary" (click)="removecode()">Delete</button>
+        <button type="button" class="btn btn-primary" routerLink="/">Home</button>
+      </div>
+</div>
+</div>

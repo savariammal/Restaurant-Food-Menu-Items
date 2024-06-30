@@ -1,0 +1,36 @@
+<h1>Add New Menu item</h1>
+<form (ngSubmit)="savedata()" #form="ngForm" autocomplete="off">
+    <div id="div1">
+    <div class="mb-3 mt-3" >
+        <label for="itemname" class="form-label">Item Name</label>
+        <input type="text" class="form-control" id="itemname" placeholder="Enter Item Name" name="itemname" required
+            minlength="3" maxlength="200" [(ngModel)]="itemobj.itemname" #itemname="ngModel"
+            [ngStyle]="{'border-color':itemname.invalid && (itemname.touched || itemname.dirty)?'red':''}">
+        <div class="text-danger" *ngIf="itemname.invalid && (itemname.touched || itemname.dirty)">
+            <p *ngIf="itemname.errors?.['required']">Enter Item Name</p>
+            <p *ngIf="itemname.errors?.['minlength']">Enter at least 3 chars</p>
+        </div>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="itemtype" class="form-label">Item Type</label>
+        <select class="form-select" id="itemtype" placeholder="Enter Item Name" name="itemtype"
+            [(ngModel)]="itemobj.itemtype" #itemtype="ngModel">
+            <option *ngFor="let i of itemtypes">{{i}}</option>
+        </select>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="itemprice" class="form-label">Item Price</label>
+        <input type="number" class="form-control" id="itemprice" placeii9holder="Enter Item Price" name="itemprice"
+            required min="1" max="2000" [(ngModel)]="itemobj.itemprice" #itemprice="ngModel"
+            [ngStyle]="{'border-color':itemprice.invalid && (itemprice.touched || itemprice.dirty)?'red':''}">
+        <div class="text-danger" *ngIf="itemprice.invalid && (itemprice.touched || itemprice.dirty)">
+            <p *ngIf="itemprice.errors?.['required']">Enter Item Price</p>
+            <p *ngIf="itemprice.errors?.['min']">Price should be min 1</p>
+            <p *ngIf="itemprice.errors?.['max']">Price should not exceed 2000</p>
+        </div>
+    </div>
+    </div>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+</form>

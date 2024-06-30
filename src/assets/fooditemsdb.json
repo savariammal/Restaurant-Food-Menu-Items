@@ -1,0 +1,22 @@
+{
+  "menuitems": [
+    {
+      "id": "3881",
+      "itemname": "Milk payasam",
+      "itemtype": "Desserts",
+      "itemprice": 100
+    },
+    {
+      "id": "07e1",
+      "itemname": "tea",
+      "itemtype": "Starters",
+      "itemprice": 80
+    },
+    {
+      "id": "1d30",
+      "itemname": "vindriya",
+      "itemtype": "Starters",
+      "itemprice": 50
+    }
+  ]
+}
